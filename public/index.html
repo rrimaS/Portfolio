@@ -1,60 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wireframe Layout</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    header, nav, footer {
-      background-color: #ddd;
-      padding: 1rem;
-      text-align: center;
-    }
-    main {
-      display: flex;
-      min-height: 400px;
-    }
-    aside {
-      width: 25%;
-      background-color: #f4f4f4;
-      padding: 1rem;
-    }
-    section {
-      flex: 1;
-      background-color: #fff;
-      padding: 1rem;
-    }
-    footer {
-      background-color: #ccc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Samir Abu Safieh</title>
 </head>
 <body>
 
-  <header>
-    <h1>Header</h1>
-  </header>
+    <!-- Menu -->
+    <nav id="menu">
+        <a class="nav" href="index.html"><b>HOMEPAGE</b></a>
+        <a class="nav" href="resume.html"><b>RESUME</b></a>
+        <a class="nav" href="other.html"><b>OTHER</b></a>
+        <a class="nav" href="aboutme.html"><b>ABOUT ME</b></a>
+    </nav>
 
-  <nav>
-    <p>Navigation</p>
-  </nav>
+    <!-- Slider -->
+    <section id="slider">
+        <img src="images/image.jpg" alt="Slider Image">
+    </section>  
 
-  <main>
-    <aside>
-      <p>Sidebar</p>
-    </aside>
-    <section>
-      <p>Main Content</p>
+    <!-- Produkty -->
+    <h2>PROJECTS</h2>
+    <section id="gallery">
+        <a href="produkt.html">
+            <div class="banner">
+                <img src="images/bitmap.png" alt="photo1">
+                <p><b>SAMPLE TEXT // TEXT <br> 999.99$</b></p>
+            </div>
+        </a>
+        <a href="produkt.html">
+            <div class="banner">
+                <img src="images/bitmap.png" alt="photo2">
+                <p><b>SAMPLE TEXT // TEXT <br> 999.99$</b></p>
+            </div>
+        </a>
+        <a href="produkt.html">
+            <div class="banner">
+                <img src="images/bitmap.png" alt="photo3">
+                <p><b>SAMPLE TEXT // TEXT <br> 999.99$</b></p>
+            </div>
+        </a>
+        <a href="produkt.html">
+            <div class="banner">
+                <img src="images/bitmap.png" alt="photo4">
+                <p><b>SAMPLE TEXT // TEXT <br> 999.99$</b></p>
+            </div>
+        </a>
+        <!-- Dodaj więcej jeśli chcesz -->
     </section>
-  </main>
 
-  <footer>
-    <p>Footer</p>
-  </footer>
+    <!-- Stopka -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                © 2025 Samir Abu Safieh. 
+            </div>
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+                    <img src="images/linkedin-icon.png" class="linkedin" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github-icon.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </footer> 
 
 </body>
 </html>
