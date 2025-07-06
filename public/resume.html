@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Resume - Samir Abu Safieh</title>
+</head>
+<body>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <a class="nav" href="index.html"><b>HOMEPAGE</b></a>
+        <a class="nav" href="resume.html"><b>RESUME</b></a>
+        <a class="nav" href="other.html"><b>OTHER</b></a>
+        <a class="nav" href="aboutme.html"><b>ABOUT ME</b></a>
+    </nav>
+
+    <!-- Resume Section -->
+    <section id="resume-section">
+        <h2>MY RESUME</h2>
+        
+        <div class="resume-controls">
+            <button onclick="toggleFullscreen()" class="fullscreen-btn">
+                <span>🔍</span> Toggle Fullscreen
+            </button>
+        </div>
+
+        <div class="resume-container">
+            <iframe id="resume-iframe" src="documents/resume.pdf" type="application/pdf">
+                <p>Your browser doesn't support PDF viewing. <a href="documents/resume.pdf" download>Download the PDF</a> instead.</p>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                © 2025 Samir Abu Safieh. 
+            </div>
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+                    <img src="images/linkedin-icon.png" class="linkedin" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github-icon.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFullscreen() {
+            const iframe = document.getElementById('resume-iframe');
+            const container = document.querySelector('.resume-container');
+            
+            if (container.classList.contains('fullscreen')) {
+                container.classList.remove('fullscreen');
+                document.body.style.overflow = 'auto';
+            } else {
+                container.classList.add('fullscreen');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close fullscreen on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const container = document.querySelector('.resume-container');
+                if (container.classList.contains('fullscreen')) {
+                    container.classList.remove('fullscreen');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
