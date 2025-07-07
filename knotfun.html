@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>KNOT FUN - Samir Abu Safieh</title>
+</head>
+<body>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <a class="nav" href="index.html"><b>HOMEPAGE</b></a>
+        <a class="nav" href="resume.html"><b>RESUME</b></a>
+        <a class="nav" href="404.html"><b>OTHER</b></a>
+        <a class="nav" href="404.html"><b>ABOUT ME</b></a>
+    </nav>
+
+    <!-- Project Title -->
+    <section id="project-header">
+        <h1 class="project-title">KNOT FUN</h1>
+        <p class="project-subtitle">Level Designer, 3D Artist, Enviroment Artist</p>
+    </section>
+
+    <!-- Project Slider -->
+    <section id="project-slider">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <img src="images/knotfun1.png" alt="Project Screenshot 1" class="slider-image active">
+                <img src="images/knotfun2.png" alt="Project Screenshot 2" class="slider-image">
+                <img src="images/knotfun3.png" alt="Project Screenshot 3" class="slider-image">
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="content-container">
+            <h2>OVERVIEW</h2>
+            <div class="overview-content">
+                <p>KNOT FUN is a twin=stick shooter game that also blends swarm-style gameplay, bullethell combat and roguelike progression, all set in a Wild West atmosphere with a subtle futuristic twist. Designed for local co-op with up to four players, it offers chaotic and engaging fun that's perfect for casual hangouts with friends. My role in the project involved designing all the levels from scratch, developing gameplay concepts, scripting environmental hazards, creating simple 3D models and testing gameplay. The game was shown at the Indie Showcase during the Game Access Conference and is set to release soon on PC via Steam.</p>
+                
+                <p>As stated above, the game blends swarm-style, bullet hell, and roguelike elements to create a unique co-op experience. With that in mind, my task was to design a level that complements this style of gameplay. Since the game features swarm-style combat, the basic shape of the map should naturally resemble an arena. However, a key gameplay mechanic is that players are connected by a rope, which limits their movement. Therefore, the map needs to be large enough to allow for smooth navigation, but not so large that it removes the challenge of coordination.</p>
+                
+                <p>A key point to mention is that the team consisted of six people, and I was the sole person fully responsible for level design. We worked on the project over the course of three months, balancing it alongside our jobs and university commitments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals and Restrictions -->
+    <section id="goals-restrictions">
+        <div class="content-container">
+            <div class="goals-restrictions-wrapper">
+                <div class="goals-section">
+                    <h3>GOALS</h3>
+                    <ul class="goals-list">
+                        <li>Create 3 playable maps with a tutorial concept</li>
+                        <li>Designe maps to emphasize the mobility limitation caused by the rope mechanic</li>
+                        <li>Ensure maps follow an arena-style layout, similar to other swarm-based games</li>
+                        <li>Develope a tutorial that introduces simple controls in an engaging and enjoyable way</li>
+                        <li>Optimize maps to prevent performance issues, even with a high number of enemies and particle effects</li>
+                    </ul>
+                </div>
+                
+                <div class="restrictions-section">
+                    <h3>RESTRICTIONS</h3>
+                    <ul class="restrictions-list">
+                        <li>Limited development time (3 months of after-hours work)</li>
+                        <li>Incomplete gameplay loop and missing final player model</li>
+                        <li>Budget constraints limited the use of external assets</li>
+                        <li>No opportunity to test 3-player gameplay on the created maps</li>
+                        <li>Required careful asset placement to avoid obstructing the camera angle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="project-gallery">
+        <div class="content-container">
+            <h2>GALLERY</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/knotfun1.png" alt="Project Image 1">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/knotfun2.png" alt="Project Image 2">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/knotfun3.png" alt="Project Image 3">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery4.jpg" alt="Project Image 4">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery5.jpg" alt="Project Image 5">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery6.jpg" alt="Project Image 6">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery7.jpg" alt="Project Image 7">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery8.jpg" alt="Project Image 8">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery9.jpg" alt="Project Image 9">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery10.jpg" alt="Project Image 10">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery11.jpg" alt="Project Image 11">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery12.jpg" alt="Project Image 12">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery13.jpg" alt="Project Image 13">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery14.jpg" alt="Project Image 14">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/gallery15.jpg" alt="Project Image 15">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-image" src="" alt="Gallery Image">
+        <div class="lightbox-nav">
+            <button class="lightbox-btn prev" onclick="changeLightboxImage(-1)">❮</button>
+            <button class="lightbox-btn next" onclick="changeLightboxImage(1)">❯</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                © 2025 Samir Abu Safieh. 
+            </div>
+            <div class="footer-social">
+                <a href="www.linkedin.com/in/samir-abu-safieh-6640a3305" target="_blank" rel="noopener noreferrer">
+                    <img src="images/linkedin-icon.png" class="linkedin" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/rrimaS" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github-icon.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Simple Slider functionality
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slider-image');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+}
+
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
+    if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index - 1;
+    showSlide(currentSlideIndex);
+}
+
+// Auto-advance slider
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
+
+// Lightbox functionality (unchanged)
+let currentLightboxIndex = 0;
+const galleryItems = document.querySelectorAll('.gallery-item img');
+
+function openLightbox(element) {
+    const img = element.querySelector('img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.style.display = 'flex';
+    
+    // Find current index
+    currentLightboxIndex = Array.from(galleryItems).indexOf(img);
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function changeLightboxImage(direction) {
+    currentLightboxIndex += direction;
+    if (currentLightboxIndex >= galleryItems.length) currentLightboxIndex = 0;
+    if (currentLightboxIndex < 0) currentLightboxIndex = galleryItems.length - 1;
+    
+    const lightboxImage = document.getElementById('lightbox-image');
+    lightboxImage.src = galleryItems[currentLightboxIndex].src;
+    lightboxImage.alt = galleryItems[currentLightboxIndex].alt;
+}
+
+// Close lightbox on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeLightbox();
+    }
+});
+    </script>
+
+</body>
+</html>
