@@ -823,46 +823,6 @@ footer {
     font-weight: bold;
 }
 
-/* Gallery Section */
-#project-gallery {
-    padding: 80px 0;
-    background: #1E352F;
-    margin: 60px 0 0 0;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 40px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.gallery-item {
-    aspect-ratio: 1;
-    overflow: hidden;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #1E352F;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(255, 111, 60, 0.4);
-    border-color: #FF6F3C;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
 /* Lightbox */
 .lightbox {
     display: none;
@@ -892,7 +852,7 @@ footer {
     color: #FF6F3C;
 }
 
-#lightbox-image {
+#lightbox-image, #step-lightbox-image {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
@@ -931,11 +891,6 @@ footer {
 /* Responsive Design */
 
 @media (max-width: 1024px) {
-    .gallery-grid {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-    }
-    
     .goals-restrictions-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -949,12 +904,6 @@ footer {
     
     .slider-wrapper {
         height: 300px;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        gap: 10px;
     }
     
     .goals-section, .restrictions-section {
@@ -995,12 +944,6 @@ footer {
         height: 250px;
     }
     
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(8, 1fr);
-        gap: 8px;
-    }
-    
     .goals-section, .restrictions-section {
         padding: 20px 15px;
     }
@@ -1009,7 +952,7 @@ footer {
         font-size: 1rem;
     }
 
-        .slider-container {
+    .slider-container {
         padding: 4px;
     }
     
@@ -1033,6 +976,7 @@ footer {
         height: 10px;
     }
 }
+
 /* My Workflow Section */
 #my-workflow {
     padding: 80px 0;
@@ -1190,6 +1134,30 @@ footer {
     transform: scale(1.1);
 }
 
+/* Image Titles for Workflow Section */
+.image-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: #F5F5F0;
+    padding: 20px 12px 12px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+    border-radius: 0 0 6px 6px;
+}
+
+.step-image:hover .image-title {
+    opacity: 1;
+}
+
 /* Responsive Design for Workflow */
 @media (max-width: 768px) {
     .workflow-step {
@@ -1220,6 +1188,11 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
     }
+    
+    .image-title {
+        font-size: 0.8rem;
+        padding: 15px 8px 8px 8px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1245,6 +1218,11 @@ footer {
     .step-gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
+    }
+    
+    .image-title {
+        font-size: 0.75rem;
+        padding: 12px 6px 6px 6px;
     }
 }
 
