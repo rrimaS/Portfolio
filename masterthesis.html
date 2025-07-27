@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Samir Abu Safieh</title>
+    <link rel="icon" type="image/x-icon" href="images/LogoPlaceHolders512-kopia_2.png">
+</head>
+<body>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <a class="nav" href="index.html"><b>HOMEPAGE</b></a>
+        <a class="nav" href="resume.html"><b>RESUME</b></a>
+        <a class="nav" href="404.html"><b>OTHER</b></a>
+        <a class="nav" href="404.html"><b>ABOUT ME</b></a>
+    </nav>
+
+    <!-- Project Title -->
+    <section id="project-header">
+        <h1 class="project-title">PROCEDURAL GENERATION IN TERRAIN</h1>
+        <p class="project-subtitle">Master's Thesis (IN THE MAKING)</p>
+    </section>
+
+    <!-- Section Navigation Menu -->
+    <section id="section-navigation">
+        <div class="section-nav-container">
+            <div class="section-nav-menu">
+                <button class="section-nav-btn" onclick="scrollToSection('overview')">
+                    Overview
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('perlin-noise')">
+                    Perlin Noise 
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('heightmap-generation')">
+                    Wave Function Collapse
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('rule-based-system')">
+                    Terrain Generation using GAN
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="content-container">
+            <h2>OVERVIEW</h2>
+            <div class="overview-content">
+                <p>This Master's thesis project explores the fascinating world of procedural terrain generation, comparing and implementing three distinct algorithms to create realistic and diverse landscapes. The research focuses on analyzing different approaches to procedural generation, from classic Perlin noise implementations to advanced heightmap generation techniques and sophisticated rule-based systems.</p>
+                
+                <p>The project serves as both a comprehensive academic study and a practical implementation showcase, demonstrating how various procedural generation methods can be applied to create terrain suitable for different applications, from game development to simulation environments. Through rigorous testing and analysis, this work provides valuable insights into the strengths and limitations of each approach.</p>
+                
+                <p>Each algorithm has been implemented and tested extensively, with detailed documentation of the development process, visual results, and performance characteristics. The following sections present each algorithm individually, showcasing the unique features and capabilities that make them suitable for different types of terrain generation tasks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Algorithm Sections (Similar to Workflow) -->
+    <section id="my-algorithms">
+        <div class="content-container">
+            <h2>IMPLEMENTED ALGORITHMS</h2>
+            <div class="algorithm-container">
+                
+                <!-- Algorithm 1: Perlin Noise -->
+                <div class="algorithm-section" id="perlin-noise">
+                    <div class="algorithm-header">
+                        <div class="algorithm-number">01</div>
+                        <h3 class="algorithm-title">Perlin Noise Algorithm</h3>
+                    </div>
+                    <div class="algorithm-content">
+                        <p class="algorithm-description">
+                            The Perlin Noise algorithm forms the foundation of procedural terrain generation, utilizing gradient noise functions to create natural-looking landscapes with smooth transitions and organic patterns. This implementation focuses on multi-octave noise generation, allowing for detailed terrain features at various scales. The algorithm excels at creating rolling hills, mountain ranges, and natural coastlines that feel authentic and visually appealing.
+                        </p>
+                        
+                        <div class="algorithm-gallery">
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/perlin_black.gif" alt="Perlin Noise Basic Implementation">
+                                <div class="image-title">Basic Perlin Noise Terrain</div>
+                            </div>
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/perlin_white.png" alt="Multi-octave Perlin Noise">
+                                <div class="image-title">Mesh creation using Perlin Height Map</div>
+                            </div>
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/perlin_Color.png" alt="Perlin Noise Performance Analysis">
+                                <div class="image-title">Terrain Generation with Color Map</div>
+                            </div>
+                        </div>
+                        
+                        <div class="algorithm-video">
+                            <div class="video-wrapper">
+                                <video controls poster="images/videos/perlin_img.png">
+                                    <source src="images/videos/perlin_film.mp4" type="video/mp4">
+                                    <!-- <source src="videos/perlin-noise-demo.webm" type="video/webm"> -->
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="video-caption">
+                                <h4>Perlin Noise Real-Time Generation</h4>
+                                <p>Quick demonstration on generating terrain using Perlin Noise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algorithm 2: Heightmap Generation -->
+                <div class="algorithm-section" id="heightmap-generation">
+                    <div class="algorithm-header">
+                        <div class="algorithm-number">02</div>
+                        <h3 class="algorithm-title">Wave Function Collapse</h3>
+                    </div>
+                    <div class="algorithm-content">
+                        <p class="algorithm-description">
+                            The Wave Function Collapse algorithm, crated in 2016, offers a powerful approach to procedural terrain generation, using constraint-based pattern placement to create diverse and coherent landscapes. Unlike noise-based methods, WFC builds terrain by analyzing example inputs and assembling tiles based on local compatibility rules, ensuring logical and visually consistent terrain features. This implementation focuses on modular tile generation, where the user defines a list of possible tile variants and their adjacency rules. The algorithm then uses these rules to generate terrain that adheres to the specified constraints, resulting in structured and visually appealing environments.
+                        </p>
+                        
+                        <div class="algorithm-gallery">
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/wave_gif.gif" alt="Diamond-Square Algorithm Results">
+                                <div class="image-title">Prototype tested for road generation </div>
+                            </div>
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/wave_node.png" alt="Fractal Heightmap Generation">
+                                <div class="image-title">List of rules for a specfic node</div>
+                            </div>
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/wave_img.png" alt="High-Resolution Terrain Detail">
+                                <div class="image-title">Generated Terrain with 3D models </div>
+                            </div>
+                        </div>
+                        
+                        <div class="algorithm-video">
+                            <div class="video-wrapper">
+                                <video controls poster="images/videos/wave_img.png">
+                                    <source src="images/videos/Wave.mp4" type="video/mp4">
+                                    <!-- <source src="videos/heightmap-demo.webm" type="video/webm"> -->
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="video-caption">
+                                <h4>Wave Function Collapse</h4>
+                                <p>demonstrating my implementation of the Wave Function Collapse Algorytm.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algorithm 3: Rule-Based System -->
+                <div class="algorithm-section" id="rule-based-system">
+                    <div class="algorithm-header">
+                        <div class="algorithm-number">03</div>
+                        <h3 class="algorithm-title">Terrain Generation using GAN</h3>
+                    </div>
+                    <div class="algorithm-content">
+                        <p class="algorithm-description">
+                                THIS SECTION IS STILL IN THE MAKING
+                        </p>
+                        
+                        <div class="algorithm-gallery">
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/LogoPlaceHolders512-kopia_2.png" alt="Geological Rule Implementation">
+                                <div class="image-title">Generated Satilte Image by the model</div>
+                            </div>
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/LogoPlaceHolders512-kopia_2.png" alt="Erosion Simulation Results">
+                                <div class="image-title">Height Map converstion</div>
+                            </div>
+                            <div class="algorithm-image" onclick="openAlgorithmLightbox(this)">
+                                <img src="images/LogoPlaceHolders512-kopia_2.png" alt="Complex Terrain Features">
+                                <div class="image-title">Unity Terrain</div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="algorithm-video">
+                            <div class="video-wrapper">
+                                <img src="images/lofi.gif" alt="Complex Terrain Features">
+                                <!-- <video controls poster="images/rule-based-video-poster.png">
+                                    <source src="videos/rule-based-demo.mp4" type="video/mp4">
+                                    <source src="videos/rule-based-demo.webm" type="video/webm">
+                                    Your browser does not support the video tag.
+                                 </video> -->
+                            </div>
+
+                            <div class="video-caption">
+                                <h4></h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Algorithm Lightbox -->
+    <div id="algorithm-lightbox" class="lightbox" onclick="closeAlgorithmLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="algorithm-lightbox-image" src="" alt="Algorithm Image">
+        <div class="lightbox-nav">
+            <button class="lightbox-btn prev" onclick="changeAlgorithmLightboxImage(-1, event)">❮</button>
+            <button class="lightbox-btn next" onclick="changeAlgorithmLightboxImage(1, event)">❯</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                © 2025 Samir Abu Safieh. 
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/samir-abu-safieh-6640a3305/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/linkedin-icon.png" class="linkedin" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/rrimaS" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github-icon.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll to section function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offset = 80;
+                const sectionTop = section.offsetTop - offset;
+                
+                window.scrollTo({
+                    top: sectionTop,
+                    behavior: 'smooth'
+                });
+                
+                setTimeout(() => {
+                    section.classList.add('section-highlight');
+                    setTimeout(() => {
+                        section.classList.remove('section-highlight');
+                    }, 2000);
+                }, 500);
+            }
+        }
+
+        // Active navigation button tracking
+        function updateActiveNavButton() {
+            const sections = ['overview', 'perlin-noise', 'heightmap-generation', 'rule-based-system'];
+            const navButtons = document.querySelectorAll('.section-nav-btn');
+            const scrollPosition = window.scrollY + 200;
+            
+            sections.forEach((sectionId, index) => {
+                const section = document.getElementById(sectionId);
+                if (section && navButtons[index]) {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        navButtons.forEach(btn => btn.classList.remove('active-section'));
+                        navButtons[index].classList.add('active-section');
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavButton);
+
+        // Algorithm Lightbox functionality
+        let currentAlgorithmLightboxIndex = 0;
+        let currentAlgorithmImages = [];
+
+        function openAlgorithmLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('algorithm-lightbox');
+            const lightboxImage = document.getElementById('algorithm-lightbox-image');
+            
+            // Get all images from the current algorithm section
+            const algorithmSection = element.closest('.algorithm-section');
+            const algorithmImageContainers = Array.from(algorithmSection.querySelectorAll('.algorithm-image'));
+            
+            currentAlgorithmImages = algorithmImageContainers.map(container => container.querySelector('img'));
+            currentAlgorithmLightboxIndex = currentAlgorithmImages.findIndex(algorithmImg => algorithmImg.src === img.src);
+            
+            if (currentAlgorithmLightboxIndex === -1) {
+                currentAlgorithmLightboxIndex = 0;
+            }
+            
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Show/hide navigation buttons
+            const prevBtn = lightbox.querySelector('.lightbox-btn.prev');
+            const nextBtn = lightbox.querySelector('.lightbox-btn.next');
+            
+            if (currentAlgorithmImages.length <= 1) {
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            } else {
+                if (prevBtn) prevBtn.style.display = 'flex';
+                if (nextBtn) nextBtn.style.display = 'flex';
+            }
+        }
+
+        function closeAlgorithmLightbox() {
+            document.getElementById('algorithm-lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeAlgorithmLightboxImage(direction, event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            if (!currentAlgorithmImages || currentAlgorithmImages.length === 0) {
+                return;
+            }
+            
+            currentAlgorithmLightboxIndex += direction;
+            
+            if (currentAlgorithmLightboxIndex >= currentAlgorithmImages.length) {
+                currentAlgorithmLightboxIndex = 0;
+            }
+            if (currentAlgorithmLightboxIndex < 0) {
+                currentAlgorithmLightboxIndex = currentAlgorithmImages.length - 1;
+            }
+            
+            const lightboxImage = document.getElementById('algorithm-lightbox-image');
+            const currentImg = currentAlgorithmImages[currentAlgorithmLightboxIndex];
+            
+            if (currentImg) {
+                lightboxImage.src = currentImg.src;
+                lightboxImage.alt = currentImg.alt;
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            const lightbox = document.getElementById('algorithm-lightbox');
+            
+            if (lightbox.style.display === 'flex') {
+                if (event.key === 'Escape') {
+                    closeAlgorithmLightbox();
+                } else if (event.key === 'ArrowLeft') {
+                    event.preventDefault();
+                    changeAlgorithmLightboxImage(-1);
+                } else if (event.key === 'ArrowRight') {
+                    event.preventDefault();
+                    changeAlgorithmLightboxImage(1);
+                }
+            }
+        });
+
+        // Add active section styling
+        const style = document.createElement('style');
+        style.textContent = `
+            .section-nav-btn.active-section {
+                background: rgba(255, 111, 60, 0.2) !important;
+                border-color: #FF6F3C !important;
+                color: #FF6F3C !important;
+            } 
+        `;
+        document.head.appendChild(style);
+    </script>
+
+
+</body>
+</html>
