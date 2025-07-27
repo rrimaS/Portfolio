@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Samir Abu Safieh</title>
+    <link rel="icon" type="image/x-icon" href="images/LogoPlaceHolders512-kopia_2.png">
+</head>
+<body>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <a class="nav" href="index.html"><b>HOMEPAGE</b></a>
+
+        <!-- Projects Dropdown -->
+        <div class="nav-dropdown">
+            <a class="nav dropdown-toggle" href="#"><b>PROJECTS</b></a>
+            <div class="dropdown-menu">
+                <a href="paperblades.html" class="dropdown-item">Paper Blades</a>
+                <a href="knotfun.html" class="dropdown-item">Knot Fun</a>
+                <a href="masterthesis.html" class="dropdown-item">Master Thesis</a>
+                <a href="404.html" class="dropdown-item">Unreal Engine Project</a>
+            </div>
+        </div>
+
+        <a class="nav" href="resume.html"><b>RESUME</b></a>
+        <a class="nav" href="404.html"><b>OTHER</b></a>
+        <!-- <a class="nav" href="404.html"><b>ABOUT ME</b></a> -->
+    </nav>
+
+    <!-- Project Title -->
+    <section id="project-header">
+        <h1 class="project-title">PAPER BLADES</h1>
+        <p class="project-subtitle">Level Designer</p>
+    </section>
+
+    <!-- NAV MENU -->
+    <section id="section-navigation">
+        <div class="section-nav-container">
+            <div class="section-nav-menu">
+                <button class="section-nav-btn" onclick="scrollToSection('overview')">
+                    Overview
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('goals-restrictions')">
+                    Goals & Restrictions
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('game-showcase')">
+                    Play Game
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('project-gallery')">
+                    Gallery
+                </button>
+            </div>
+        </div>
+    </section>
+
+<script>
+// Smooth scroll to section function
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        // Calculate offset to account for any fixed headers
+        const offset = 80; // Adjust this value based on your needs
+        const sectionTop = section.offsetTop - offset;
+        
+        // Smooth scroll to the section
+        window.scrollTo({
+            top: sectionTop,
+            behavior: 'smooth'
+        });
+        
+        // Add highlight effect
+        setTimeout(() => {
+            section.classList.add('section-highlight');
+            setTimeout(() => {
+                section.classList.remove('section-highlight');
+            }, 2000);
+        }, 500);
+    }
+}
+
+// Optional: Add active state to navigation buttons based on scroll position
+let isScrolling = false;
+
+function updateActiveNavButton() {
+    if (isScrolling) return;
+    
+    const sections = [
+        'project-slider',
+        'overview', 
+        'goals-restrictions',
+        'game-showcase',
+        'project-gallery'
+    ];
+    
+    const navButtons = document.querySelectorAll('.section-nav-btn');
+    const scrollPosition = window.scrollY + 200; // Offset for better detection
+    
+    sections.forEach((sectionId, index) => {
+        const section = document.getElementById(sectionId);
+        if (section && navButtons[index]) {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                navButtons.forEach(btn => btn.classList.remove('active-section'));
+                navButtons[index].classList.add('active-section');
+            }
+        }
+    });
+}
+
+// Add scroll listener for active state updates
+window.addEventListener('scroll', updateActiveNavButton);
+
+// Add active section styling
+const style = document.createElement('style');
+style.textContent = `
+    .section-nav-btn.active-section {
+        background: rgba(255, 111, 60, 0.2) !important;
+        border-color: #FF6F3C !important;
+        color: #FF6F3C !important;
+    }
+`;
+document.head.appendChild(style);
+
+// Optional: Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown && !dropdown.contains(event.target)) {
+        // Could add additional close functionality here if needed
+    }
+});
+
+// Prevent dropdown link from navigating
+document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+}); 
+</script>
+
+    <!-- Project Slider -->
+    <section id="project-slider">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <img src="images/paperblades_1.png" alt="Paper Blades Screenshot 1" class="slider-image active">
+                <img src="images/paperblades_2.png" alt="Paper Blades Screenshot 2" class="slider-image">
+                <img src="images/paperblades_3.png" alt="Paper Blades Screenshot 3" class="slider-image">
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="content-container">
+            <h2>OVERVIEW</h2>
+            <div class="overview-content">
+                <p>PAPER BLADES is a tactical action roguelite that blends RTS elements with strategic gameplay, where players command origami warriors in a feudal Japanese setting. As the Level Designer for this project, my role focused on creating engaging tactical environments that complement the game’s unique origami aesthetic and Japanese feudal architecture.</p>
+                
+                <p>The game combines traditional Japanese folklore with innovative paper-craft visuals, presenting a distinctive art style in which characters and environments appear to be made from folded paper. These elements clash with dynamic 3D procedurally generated enemies, enhancing the contrast and visual intrigue.</p>
+                
+                <p> My responsibilities included designing an island-like terrain suitable for 2D character movement, as well as creating a village inspired by feudal Japanese architecture—with a papery feel to reinforce the immersive paper world and the looming invasion of the INK. To suit the roguelite nature of the game, I also focused on building semi-randomized level layouts that enhance replayability and keep gameplay fresh.</p>
+                
+                <p>Working on PAPER BLADES was a valuable experience, as it was one of my first major projects. It taught me the importance of teamwork, adapting to a fast-paced development environment, and the reality of crunch time sometimes working up to 15 hours a da and night. The project was completed in just three months and marked the first official title developed by our team at PlaceHolders Studio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals and Restrictions -->
+    <section id="goals-restrictions">
+        <div class="content-container">
+            <div class="goals-restrictions-wrapper">
+                <div class="goals-section">
+                    <h3>GOALS</h3>
+                    <ul class="goals-list">
+                        <li>Design tactical arenas that encourage strategic unit positioning and movement</li>
+                        <li>Create environments that complement the paper=origami aesthetic while maintaining gameplay clarity</li>
+                        <li>Develop level layouts that support both RTS-style unit management and action-oriented combat</li>
+                        <li>Make a terrain that will not collide with a 2D player</li>
+                        <li>Ensure levels work effectively with the roguelite progression and randomization systems</li>
+                    </ul>
+                </div>
+                
+                <div class="restrictions-section">
+                    <h3>RESTRICTIONS</h3>
+                    <ul class="restrictions-list">
+                        <li>Maintain visual consistency with the paper-craft art style throughout all level elements</li>
+                        <li>Limited development resources for creating custom environmental assets</li>
+                        <li>Camera constraints required careful consideration of level verticality and depth</li>
+                        <li>Very unique blend of genres making it hard to search for inspiration</li>
+                        <li>Short time frame of 3 months</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Showcase Section -->
+    <section id="game-showcase">
+        <div class="showcase-container">
+            <div class="showcase-header">
+                <h2 class="showcase-title">Play PAPER BLADES</h2>
+            </div>   
+            <div class="showcase-content">
+                <div class="game-banner-container">
+                    <img src="images/tytul.jpg" alt="PAPER BLADES Game Banner" class="game-banner">
+                    <div class="banner-overlay">
+                    </div>
+                </div>
+                
+                <div class="showcase-buttons">
+                    <a href="https://szejkerek.itch.io/paper-blades" target="_blank" rel="noopener noreferrer" class="play-now-btn">
+                        <span class="btn-text">View on Steam</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    
+                    <a href="documents/pitchdeck.pdf" target="_blank" rel="noopener noreferrer" class="pitch-deck-btn">
+                        <span class="btn-text">Check out our Pitch Deck</span>
+                        <span class="btn-arrow">📄</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Project Gallery Section -->
+    <section id="project-gallery">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2 class="gallery-title">Project Gallery</h2>
+            </div>
+
+            <!-- Gallery Filters -->
+            <!-- <div class="gallery-filters">
+                <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+                <button class="filter-btn" onclick="filterGallery('concept')">Concept Art</button>
+                <button class="filter-btn" onclick="filterGallery('level-design')">Level Design</button>
+                <button class="filter-btn" onclick="filterGallery('gameplay')">Gameplay</button>
+            </div> -->
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Concept Art Images -->
+                <div class="gallery-item concept featured" onclick="openEnhancedLightbox(this)">
+                    <img src="images/pb/3.png" alt="Paper Blades Concept Art">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Final Level Look</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item concept" onclick="openEnhancedLightbox(this)">
+                    <img src="images/pb/2.png" alt="Japanese Environment Concepts">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Tutorial Level</div>
+                    </div>
+                </div>
+
+                <!-- Level Design Images -->
+                <div class="gallery-item level-design" onclick="openEnhancedLightbox(this)">
+                    <img src="images/pb/1.png" alt="Tactical Arena Layout">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">First Level</div>
+                        <!-- <div class="gallery-item-description">Strategic positioning and movement flow designs for tactical combat scenarios.</div> -->
+                    </div>
+                </div>
+
+                <div class="gallery-item level-design featured" onclick="openEnhancedLightbox(this)">
+                    <img src="images/pb/4.png" alt="Level Flow Diagrams">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Final Level Look</div>
+                        <!-- <div class="gallery-item-description">Detailed analysis of player movement patterns and strategic positioning opportunities.</div> -->
+                    </div>
+                </div>
+
+                <div class="gallery-item level-design" onclick="openEnhancedLightbox(this)">
+                    <img src="images/pb/v1.png" alt="Cover System Design">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level Randomize Variant</div>
+                        <!-- <div class="gallery-item-description">Strategic cover placement and elevation design for tactical gameplay depth.</div> -->
+                    </div>
+                </div>
+
+                <!-- Environment Images -->
+                <div class="gallery-item environments" onclick="openEnhancedLightbox(this)">
+                    <img src="images/pb/v2.png" alt="Cherry Blossom Temple">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level Randomize Variant</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item environments" onclick="openEnhancedLightbox(this)">
+                    <img src="images/pb/v3.png" alt="Mountain Shrine">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level Randomize Variant</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Lightbox -->
+    <div id="enhanced-lightbox" class="enhanced-lightbox" onclick="closeEnhancedLightbox()">
+        <div class="enhanced-lightbox-content" onclick="event.stopPropagation()">
+            <span class="enhanced-lightbox-close" onclick="closeEnhancedLightbox()">&times;</span>
+            <img id="enhanced-lightbox-image" src="" alt="">
+            <div class="enhanced-lightbox-info">
+                <div class="enhanced-lightbox-title" id="enhanced-lightbox-title"></div>
+                <div class="enhanced-lightbox-description" id="enhanced-lightbox-description"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-copyright">
+                © 2025 Samir Abu Safieh. 
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/samir-abu-safieh-6640a3305/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/linkedin-icon.png" class="linkedin" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/rrimaS" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github-icon.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Simple Slider functionality
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slider-image');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+}
+
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
+    if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index - 1;
+    showSlide(currentSlideIndex);
+}
+
+// Auto-advance slider
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
+
+// Gallery Filter functionality
+function filterGallery(category) {
+    const items = document.querySelectorAll('.gallery-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Update active button
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    // Filter items
+    items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+            item.style.animation = 'galleryItemFadeIn 0.6s ease forwards';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Enhanced Lightbox functionality
+function openEnhancedLightbox(element) {
+    const img = element.querySelector('img');
+    const title = element.querySelector('.gallery-item-title').textContent;
+    const description = element.querySelector('.gallery-item-description').textContent;
+    
+    const lightbox = document.getElementById('enhanced-lightbox');
+    const lightboxImage = document.getElementById('enhanced-lightbox-image');
+    const lightboxTitle = document.getElementById('enhanced-lightbox-title');
+    const lightboxDescription = document.getElementById('enhanced-lightbox-description');
+    
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightboxTitle.textContent = title;
+    lightboxDescription.textContent = description;
+    
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeEnhancedLightbox() {
+    document.getElementById('enhanced-lightbox').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close lightboxes on Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeEnhancedLightbox();
+    }
+});
+
+// Smooth scroll to gallery when clicking from workflow
+function scrollToGallery() {
+    document.getElementById('project-gallery').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Smooth scroll to overview section
+function scrollToOverview() {
+    document.getElementById('overview').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+    </script>
+
+</body>
+</html>
