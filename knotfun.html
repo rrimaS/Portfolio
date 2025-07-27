@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <title>KNOT FUN - Samir Abu Safieh</title>
+    <link rel="icon" type="image/x-icon" href="images/LogoPlaceHolders512-kopia_2.png">
 </head>
 <body>
 
@@ -20,6 +21,102 @@
         <h1 class="project-title">KNOT FUN</h1>
         <p class="project-subtitle">Level Designer, 3D Artist, Environment Artist</p>
     </section>
+
+    <!-- NAV MENU -->
+
+    <section id="section-navigation">
+        <div class="section-nav-container">
+            <div class="section-nav-menu">
+                <button class="section-nav-btn" onclick="scrollToSection('overview')">
+                    Overview
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('goals-restrictions')">
+                    Goals & Restrictions
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('my-workflow')">
+                    My Workflow
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('game-showcase')">
+                    Play Game
+                </button>
+                <button class="section-nav-btn" onclick="scrollToSection('project-gallery')">
+                    Gallery
+                </button>
+            </div>
+        </div>
+    </section>
+
+<script>
+// Smooth scroll to section function
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        // Calculate offset to account for any fixed headers
+        const offset = 80; // Adjust this value based on your needs
+        const sectionTop = section.offsetTop - offset;
+        
+        // Smooth scroll to the section
+        window.scrollTo({
+            top: sectionTop,
+            behavior: 'smooth'
+        });
+        
+        // Add highlight effect
+        setTimeout(() => {
+            section.classList.add('section-highlight');
+            setTimeout(() => {
+                section.classList.remove('section-highlight');
+            }, 2000);
+        }, 500);
+    }
+}
+
+// Optional: Add active state to navigation buttons based on scroll position
+let isScrolling = false;
+
+function updateActiveNavButton() {
+    if (isScrolling) return;
+    
+    const sections = [
+        'project-slider',
+        'overview', 
+        'goals-restrictions',
+        'my-workflow',
+        'game-showcase',
+        'project-gallery'
+    ];
+    
+    const navButtons = document.querySelectorAll('.section-nav-btn');
+    const scrollPosition = window.scrollY + 200; // Offset for better detection
+    
+    sections.forEach((sectionId, index) => {
+        const section = document.getElementById(sectionId);
+        if (section && navButtons[index]) {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                navButtons.forEach(btn => btn.classList.remove('active-section'));
+                navButtons[index].classList.add('active-section');
+            }
+        }
+    });
+}
+
+// Add scroll listener for active state updates
+window.addEventListener('scroll', updateActiveNavButton);
+
+// Add active section styling
+const style = document.createElement('style');
+style.textContent = `
+    .section-nav-btn.active-section {
+        background: rgba(255, 111, 60, 0.2) !important;
+        border-color: #FF6F3C !important;
+        color: #FF6F3C !important;
+    }
+`;
+document.head.appendChild(style);
+</script>
 
     <!-- Project Slider -->
     <section id="project-slider">
@@ -501,11 +598,11 @@
         <span class="lightbox-close">&times;</span>
         <img id="step-lightbox-image" src="" alt="Workflow Image">
         <div class="lightbox-nav">
-            <button class="lightbox-btn prev" onclick="changeStepLightboxImage(-1)">❮</button>
-            <button class="lightbox-btn next" onclick="changeStepLightboxImage(1)">❯</button>
+            <button class="lightbox-btn prev" onclick="changeStepLightboxImage(-1, event)">❮</button>
+            <button class="lightbox-btn next" onclick="changeStepLightboxImage(1, event)">❯</button>
         </div>
     </div>
-
+    
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -599,7 +696,7 @@ function closeEnhancedLightbox() {
     document.body.style.overflow = 'auto';
 }
 
-// Step Lightbox functionality
+// Step Lightbox functionality - FIXED VERSION
 let currentStepLightboxIndex = 0;
 let currentStepImages = [];
 
@@ -608,19 +705,39 @@ function openStepLightbox(element) {
     const lightbox = document.getElementById('step-lightbox');
     const lightboxImage = document.getElementById('step-lightbox-image');
     
-    // Get all images from the current step
+    // Get all images from the current step - FIXED: Get actual image elements, not img tags inside them
     const stepContainer = element.closest('.workflow-step');
-    currentStepImages = Array.from(stepContainer.querySelectorAll('.step-image img'));
+    const stepImageContainers = Array.from(stepContainer.querySelectorAll('.step-image'));
+    
+    // Extract the actual img elements from the containers
+    currentStepImages = stepImageContainers.map(container => container.querySelector('img'));
+    
+    // Find current index within the step - FIXED: Compare src attributes instead of elements
+    currentStepLightboxIndex = currentStepImages.findIndex(stepImg => stepImg.src === img.src);
+    
+    // Fallback if not found
+    if (currentStepLightboxIndex === -1) {
+        currentStepLightboxIndex = 0;
+    }
     
     lightboxImage.src = img.src;
     lightboxImage.alt = img.alt;
     lightbox.style.display = 'flex';
     
-    // Find current index within the step
-    currentStepLightboxIndex = currentStepImages.indexOf(img);
-    
     // Prevent body scroll
     document.body.style.overflow = 'hidden';
+    
+    // Show/hide navigation buttons based on number of images
+    const prevBtn = lightbox.querySelector('.lightbox-btn.prev');
+    const nextBtn = lightbox.querySelector('.lightbox-btn.next');
+    
+    if (currentStepImages.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+    } else {
+        if (prevBtn) prevBtn.style.display = 'flex';
+        if (nextBtn) nextBtn.style.display = 'flex';
+    }
 }
 
 function closeStepLightbox() {
@@ -628,14 +745,36 @@ function closeStepLightbox() {
     document.body.style.overflow = 'auto';
 }
 
-function changeStepLightboxImage(direction) {
+function changeStepLightboxImage(direction, event) {
+    // FIXED: Prevent event from bubbling up to close the lightbox
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    // FIXED: Add safety check for empty array
+    if (!currentStepImages || currentStepImages.length === 0) {
+        return;
+    }
+    
     currentStepLightboxIndex += direction;
-    if (currentStepLightboxIndex >= currentStepImages.length) currentStepLightboxIndex = 0;
-    if (currentStepLightboxIndex < 0) currentStepLightboxIndex = currentStepImages.length - 1;
+    
+    // FIXED: Proper wraparound logic
+    if (currentStepLightboxIndex >= currentStepImages.length) {
+        currentStepLightboxIndex = 0;
+    }
+    if (currentStepLightboxIndex < 0) {
+        currentStepLightboxIndex = currentStepImages.length - 1;
+    }
     
     const lightboxImage = document.getElementById('step-lightbox-image');
-    lightboxImage.src = currentStepImages[currentStepLightboxIndex].src;
-    lightboxImage.alt = currentStepImages[currentStepLightboxIndex].alt;
+    const currentImg = currentStepImages[currentStepLightboxIndex];
+    
+    // FIXED: Add safety check for current image
+    if (currentImg) {
+        lightboxImage.src = currentImg.src;
+        lightboxImage.alt = currentImg.alt;
+    }
 }
 
 // Close lightboxes on Escape key
@@ -643,6 +782,23 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeStepLightbox();
         closeEnhancedLightbox();
+    }
+});
+
+// Arrow key navigation for lightboxes
+document.addEventListener('keydown', function(event) {
+    const stepLightbox = document.getElementById('step-lightbox');
+    const enhancedLightbox = document.getElementById('enhanced-lightbox');
+    
+    // Only handle arrow keys if a lightbox is open
+    if (stepLightbox.style.display === 'flex') {
+        if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            changeStepLightboxImage(-1);
+        } else if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            changeStepLightboxImage(1);
+        }
     }
 });
 
