@@ -18,7 +18,7 @@
     <!-- Project Title -->
     <section id="project-header">
         <h1 class="project-title">KNOT FUN</h1>
-        <p class="project-subtitle">Level Designer, 3D Artist, Enviroment Artist</p>
+        <p class="project-subtitle">Level Designer, 3D Artist, Environment Artist</p>
     </section>
 
     <!-- Project Slider -->
@@ -63,9 +63,9 @@
                     <h3>GOALS</h3>
                     <ul class="goals-list">
                         <li>Create 3 playable maps with a tutorial concept</li>
-                        <li>Designe maps to emphasize the mobility limitation caused by the rope mechanic</li>
+                        <li>Design maps to emphasize the mobility limitation caused by the rope mechanic</li>
                         <li>Ensure maps follow an arena-style layout, similar to other swarm-based games</li>
-                        <li>Develope a tutorial that introduces simple controls in an engaging and enjoyable way</li>
+                        <li>Develop a tutorial that introduces simple controls in an engaging and enjoyable way</li>
                         <li>Optimize maps to prevent performance issues, even with a high number of enemies and particle effects</li>
                     </ul>
                 </div>
@@ -85,216 +85,426 @@
     </section>
 
     <!-- My Workflow Section -->
-<section id="my-workflow">
-    <div class="content-container">
-        <h2>MY WORKFLOW</h2>
-        <div class="workflow-container">
-            
-            <!-- Step 1 -->
-            <div class="workflow-step">
-                <div class="step-header">
-                    <div class="step-number">01</div>
-                    <h3 class="step-title">Initial Concept & Planning</h3>
-                </div>
-                <div class="step-content">
-                    <p class="step-description">
-                        I began by analyzing the core gameplay mechanics, focusing on how the rope connection between players would affect movement and positioning. During this initial phase, I conducted research into cooperative gameplay design, studying examples from games like Pummel Party and It Takes Two for cooperative multiplayer maps, as well as Enter the Gungeon and Risk of Rain for arena-style gameplay and shooter mechanics. This research informed my early sketches of basic arena layouts and helped identify key design constraints to enhance the cooperative experience. I also developed a clear plan for a simple tutorial layout to introduce players to the core mechanics. Because drawing isn’t my strength, I use generated concept art to visually convey ideas to the rest of the team.
-                    </p>
-                    <div class="step-gallery">
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/start.png" alt="Initial sketches and concepts">
-                            <div class="image-title">Starting Point</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/2-tiles-2.png" alt="Gameplay analysis notes">
-                            <div class="image-title">Games Inspirations</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/2-tiles.png" alt="Early layout concepts">
-                            <div class="image-title">Early Layout Concepts</div>
+    <section id="my-workflow">
+        <div class="content-container">
+            <h2>MY WORKFLOW</h2>
+            <div class="workflow-container">
+                
+                <!-- Step 1 -->
+                <div class="workflow-step">
+                    <div class="step-header">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">Initial Concept & Planning</h3>
+                    </div>
+                    <div class="step-content">
+                        <p class="step-description">
+                            I began by analyzing the core gameplay mechanics, focusing on how the rope connection between players would affect movement and positioning.
+                            To do so, I started by playing or watching popular cooperative games that were in some way similar to my initial goal. I played games like Pummel Party and It Takes Two as examples of how multiplayer games create maps for more than one player, and games like Enter the Gungeon and Risk of Rain to see how arena-type games handle their map creation.
+                            The project was a continuation of a game originally made during a 48-hour University Game Jam, so I had some starting materials and a fragment of a gameplay idea that I could use as a foundation for future level design.
+                            So here the goal is to create the first level of the game,an arena-style, bullet hell/twin-stick shooter and to design a Level 0 map that would serve as a tutorial.
+                        </p>
+                        <div class="step-gallery">
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/start.png" alt="Initial sketches and concepts">
+                                <div class="image-title">Starting Point</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/2-tiles-2.png" alt="Gameplay analysis notes">
+                                <div class="image-title">Games Inspirations</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/2-tiles.png" alt="Early layout concepts">
+                                <div class="image-title">Early Layout Concepts</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Step 2 -->
+                <div class="workflow-step">
+                    <div class="step-header">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">Blockout & Prototyping</h3>
+                    </div>
+                    <div class="step-content">
+                        <p class="step-description">
+                            Created basic blockout versions of the levels using simple geometric shapes with the ProBuilder extension in Unity to test player movement and overall level flow. This phase was crucial for identifying potential issues with the rope mechanic, three-player movement collisions, and ensuring adequate space for swarm-style combat while maintaining strategic positioning challenges. During this stage, I also received information about the core player objective(destroying generators) and decided that placing these objectives in corners or narrower areas would create additional challenge and tension for the players.
+                        </p>
+                        <div class="step-gallery">
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/blockout-level0.png" alt="Greybox level layout">
+                                <div class="image-title"> Saloon HUB Level</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/bar+sandbox-blockout.png" alt="Testing player movement">
+                                <div class="image-title"> Saloon + Training Room</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/tutorial concept.png" alt="Early prototype testing">
+                                <div class="image-title">Full Tutorial Blockout</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/blockout map 1.png" alt="Iteration process">
+                                <div class="image-title"> Arena/Level-1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="workflow-step">
+                    <div class="step-header">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title">Environmental Design & Asset Collection</h3>
+                    </div>
+                    <div class="step-content">
+                        <p class="step-description">
+                            For this step, I conducted research into environments that would best suit the map blockout, focusing on a Space Western aesthetic. One key decision was to initially set aside the space elements and instead create Wild West-style scenes, which could later be reimagined with sci-fi elements through material and color adjustments. Since our team did not have a fully dedicated 3D artist, most of the assets were sourced online, while I also created simple custom assets when suitable ones couldn't be found.
+                        </p>
+                        <div class="step-gallery">
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/3-tiles.png" alt="Environmental hazard concepts">
+                                <div class="image-title">Environmental Research</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/lowpoly-wildwest.png" alt="Hazard implementation">
+                                <div class="image-title">LowPoly Wild-West City Inspiration</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/level0.png" alt="Testing hazard mechanics">
+                                <div class="image-title">First Look of Saloon Level</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="workflow-step">
+                    <div class="step-header">
+                        <div class="step-number">04</div>
+                        <h3 class="step-title">3D Modeling & Asset Creation</h3>
+                    </div>
+                    <div class="step-content">
+                        <p class="step-description">
+                            Created simple 3D models and environmental assets that fit the Wild West aesthetic with futuristic elements. Ensured all assets supported a top-down camera perspective without obstructing gameplay. Additionally, I created new prefabs by combining downloaded assets to expand the variety and functionality of the environment design.
+                        </p>
+                        <div class="step-gallery">
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/3-tile-3D.png" alt="3D modeling process">
+                                <div class="image-title">My 3D Blender Models</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/dynamite-crate.png" alt="Asset creation workflow">
+                                <div class="image-title">Dynamite Crate created from Assets</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/cactus.png" alt="Wild West themed assets">
+                                <div class="image-title">Editing existing Models via Blender</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="workflow-step">
+                    <div class="step-header">
+                        <div class="step-number">05</div>
+                        <h3 class="step-title">Game Access Indie Showcase version</h3>
+                    </div>
+                    <div class="step-content">
+                        <p class="step-description">
+                            With all of the work and time spent on the previous step, the deadline of June 6th arrived, marking the beginning of the Game Access Indie Showcase. The version of the game presented at the event included two fully functional maps, excluding the Hub and tutorial levels due to time constraints that prevented the implementation of tutorial-related mechanics. Despite these limitations, the showcase version effectively demonstrated the core gameplay experience and visual direction and most importantly, people had fun playing our game, often returning and wanting to play more.
+                        </p>
+                        <div class="step-gallery">
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/level-1-v1-3.png" alt="Notes">
+                                <div class="image-title">Level 1 GA Version</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/level2_3tile.png" alt="Changed Map">
+                                <div class="image-title">Level 2 GA Version</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/level0_3T.png" alt="Changed Map">
+                                <div class="image-title">HUB Level Finished Version</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="workflow-step">
+                    <div class="step-header">
+                        <div class="step-number">06</div>
+                        <h3 class="step-title">Feedback Acknowledgment & Adjustments</h3>
+                    </div>
+                    <div class="step-content">
+                        <p class="step-description">
+                            At this stage, the game was presented at the Game Access Indie Showcase in Brno, where we received a large amount of valuable feedback. Key observations included bug reports, collision issues, and some visibility problems. On the positive side, we also identified which features resonated most with players what made them laugh and smile that included: secret paths, pacing, generators placements. All of this feedback was carefully considered and used to guide adjustments and improvements to the existing maps.
+                        </p>
+                        <div class="step-gallery">
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/feedback.jpg" alt="Notes">
+                                <div class="image-title">Feedback Notes & Analysis</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/level1_v2_3T.png" alt="Changed Map">
+                                <div class="image-title">New Level 1</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/level2_v2_3T.png" alt="Changed Map">
+                                <div class="image-title">New Level 2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 7 -->
+                <div class="workflow-step">
+                    <div class="step-header">
+                        <div class="step-number">07</div>
+                        <h3 class="step-title">Future Plans & Development</h3>
+                    </div>
+                    <div class="step-content">
+                        <p class="step-description">
+                            The game is still in development and not yet fully finished, with many plans in place for future updates. These include creating a new tutorial to reflect the significant story changes made during mid-development, adding environmental hazards to enhance gameplay variety, and expanding the map pool beyond the current three available levels.
+                        </p>
+                        <div class="step-gallery">
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/tutorial.png" alt="">
+                                <div class="image-title">New Tutorial that fits the newly added lore</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/level3_b.png" alt="Performance optimization">
+                                <div class="image-title">Level 4 concept</div>
+                            </div>
+                            <div class="step-image" onclick="openStepLightbox(this)">
+                                <img src="images/level3_schema.png" alt="Final iterations">
+                                <div class="image-title">Level 4 Basics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Showcase Section -->
+    <section id="game-showcase">
+        <div class="showcase-container">
+            <div class="showcase-header">
+                <h2 class="showcase-title">Play KNOT FUN</h2>
+            </div>   
+            <div class="showcase-content">
+                <div class="game-banner-container">
+                    <img src="images/knotfun_ban.png" alt="KNOT FUN Game Banner" class="game-banner">
+                    <div class="banner-overlay">
+                    </div>
+                </div>
+                
+                <a href="https://place-holders.itch.io/knot-fun" target="_blank" rel="noopener noreferrer" class="play-now-btn">
+                    <span class="btn-text">Play Now</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Project Gallery Section -->
+    <section id="project-gallery">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2 class="gallery-title">Project Gallery</h2>
             </div>
 
-            <!-- Step 2 -->
-            <div class="workflow-step">
-                <div class="step-header">
-                    <div class="step-number">02</div>
-                    <h3 class="step-title">Blockout & Prototyping</h3>
-                </div>
-                <div class="step-content">
-                    <p class="step-description">
-                        Created basic blockout versions of the levels using simple geometric shapes with the ProBuilder extension in Unity to test player movement and overall level flow. This phase was crucial for identifying potential issues with the rope mechanic, three-player movement collisions, and ensuring adequate space for swarm-style combat while maintaining strategic positioning challenges. During this stage, I also received information about the core player objective(destroying generators) and decided that placing these objectives in corners or narrower areas would create additional challenge and tension for the players.
-                    </p>
-                    <div class="step-gallery">
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/blockout-level0.png" alt="Greybox level layout">
-                            <div class="image-title"> Saloon HUB Level</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/bar+sandbox-blockout.png" alt="Testing player movement">
-                            <div class="image-title"> Saloon + Training Room</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/tutorial concept.png" alt="Early prototype testing">
-                            <div class="image-title">Full Tutorial Blockout</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/blockout map 1.png" alt="Iteration process">
-                            <div class="image-title"> Arena/Level-1</div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+                <button class="filter-btn" onclick="filterGallery('concept')">Concept Art</button>
+                <button class="filter-btn" onclick="filterGallery('blockout')">Blockouts</button>
+                <!-- <button class="filter-btn" onclick="filterGallery('environment')">Environments</button> -->
+                <button class="filter-btn" onclick="filterGallery('final')">Final Levels</button>
+                <button class="filter-btn" onclick="filterGallery('assets')">3D Assets</button>
             </div>
 
-            <!-- Step 3 -->
-            <div class="workflow-step">
-                <div class="step-header">
-                    <div class="step-number">03</div>
-                    <h3 class="step-title">Environmental Design & Asset Collection</h3>
-                </div>
-                <div class="step-content">
-                    <p class="step-description">
-                        For this step, I conducted research into environments that would best suit the map blockout, focusing on a Space Western aesthetic. One key decision was to initially set aside the space elements and instead create Wild West-style scenes, which could later be reimagined with sci-fi elements through material and color adjustments. Since our team did not have a fully dedicated 3D artist, most of the assets were sourced online, while I also created simple custom assets when suitable ones couldn't be found.
-                    </p>
-                    <div class="step-gallery">
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/3-tiles.png" alt="Environmental hazard concepts">
-                            <div class="image-title">Environmental Research</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/lowpoly-wildwest.png" alt="Hazard implementation">
-                            <div class="image-title">LowPoly Wild-West City Inspiration</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/level0.png" alt="Testing hazard mechanics">
-                            <div class="image-title">First Look of Saloon Level</div>
-                        </div>
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Concept Art Images -->
+                <div class="gallery-item concept featured" onclick="openEnhancedLightbox(this)">
+                    <img src="images/start.png" alt="Starting Point">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Starting Point</div>
+                        <div class="gallery-item-description">The original 48-hour game jam version that served as the foundation.</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Step 4 -->
-            <div class="workflow-step">
-                <div class="step-header">
-                    <div class="step-number">04</div>
-                    <h3 class="step-title">3D Modeling & Asset Creation</h3>
-                </div>
-                <div class="step-content">
-                    <p class="step-description">
-                        Created simple 3D models and environmental assets that fit the Wild West aesthetic with futuristic elements. Ensured all assets supported a top-down camera perspective without obstructing gameplay. Additionally, I created new prefabs by combining downloaded assets to expand the variety and functionality of the environment design.
-                    </p>
-                    <div class="step-gallery">
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/3-tile-3D.png" alt="3D modeling process">
-                            <div class="image-title">My 3D Blender Models</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/dynamite-crate.png" alt="Asset creation workflow">
-                            <div class="image-title">Dynamite Crate created from Assets</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/cactus.png" alt="Wild West themed assets">
-                            <div class="image-title">Editing existing Models via Blender</div>
-                        </div>
+                <div class="gallery-item concept" onclick="openEnhancedLightbox(this)">
+                    <img src="images/2-tiles.png" alt="Early Layout Concepts">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Early Layout Concepts</div>
+                        <div class="gallery-item-description">Initial concepts for arena-style level design.</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Step 5 -->
-            <div class="workflow-step">
-                <div class="step-header">
-                    <div class="step-number">05</div>
-                    <h3 class="step-title">Game Access Indie Showcase version</h3>
-                </div>
-                <div class="step-content">
-                    <p class="step-description">
-                        With all of the work and time spent on the previous step, the deadline of June 6th arrived, marking the beginning of the Game Access Indie Showcase. The version of the game presented at the event included two fully functional maps, excluding the Hub and tutorial levels due to time constraints that prevented the implementation of tutorial-related mechanics. Despite these limitations, the showcase version effectively demonstrated the core gameplay experience and visual direction and most importantly, people had fun playing our game, often returning and wanting to play more.
-                    </p>
-                    <div class="step-gallery">
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/level-1-v1-3.png" alt="Notes">
-                            <div class="image-title">Level 1 GA Version</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/level2_3tile.png" alt="Changed Map">
-                            <div class="image-title">Level 2 GA Version</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/level0_3T.png" alt="Changed Map">
-                            <div class="image-title">HUB Level Finished Version</div>
-                        </div>
+                <!-- Blockout Images -->
+                <div class="gallery-item blockout" onclick="openEnhancedLightbox(this)">
+                    <img src="images/bar+sandbox-blockout.png" alt="Saloon + Training Room">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Saloon + Training Room</div>
+                        <div class="gallery-item-description">Combined layout showing the main saloon area connected to the training sandbox.</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Step 6 -->
-            <div class="workflow-step">
-                <div class="step-header">
-                    <div class="step-number">06</div>
-                    <h3 class="step-title">Feedback Acknowledgment & Adjustments</h3>
-                </div>
-                <div class="step-content">
-                    <p class="step-description">
-                        At this stage, the game was presented at the Game Access Indie Showcase in Brno, where we received a large amount of valuable feedback. Key observations included bug reports, collision issues, and some visibility problems. On the positive side, we also identified which features resonated most with players what made them laugh and smile that included: secret paths, pacing, generators placements. All of this feedback was carefully considered and used to guide adjustments and improvements to the existing maps.
-                    </p>
-                    <div class="step-gallery">
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/feedback.jpg" alt="Notes">
-                            <div class="image-title">Feedback Notes & Analysis</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/level1_v2_3T.png" alt="Changed Map">
-                            <div class="image-title">New Level 1</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/Level2_v2_3T.png" alt="Changed Map">
-                            <div class="image-title">New Level 2</div>
-                        </div>
+                <div class="gallery-item blockout" onclick="openEnhancedLightbox(this)">
+                    <img src="images/blockout-level0.png" alt="Saloon HUB Level Blockout">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Saloon HUB Level</div>
+                        <div class="gallery-item-description">Basic geometric blockout of the central hub area using Unity's ProBuilder extension.</div>
                     </div>
                 </div>
-            </div>
-                        <!-- Step 7 -->
-            <div class="workflow-step">
-                <div class="step-header">
-                    <div class="step-number">07</div>
-                    <h3 class="step-title">Future Plans & Development</h3>
-                </div>
-                <div class="step-content">
-                    <p class="step-description">
-                        The game is still in development and not yet fully finished, with many plans in place for future updates. These include creating a new tutorial to reflect the significant story changes made during mid-development, adding environmental hazards to enhance gameplay variety, and expanding the map pool beyond the current three available levels.
-                    </p>
-                    <div class="step-gallery">
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/tutorial.png" alt="">
-                            <div class="image-title">New Tutorial that fits the newly added lore</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/level3_b.png" alt="Performance optimization">
-                            <div class="image-title">Level 4 concept</div>
-                        </div>
-                        <div class="step-image" onclick="openStepLightbox(this)">
-                            <img src="images/level3_schema.png" alt="Final iterations">
-                            <div class="image-title">Level 4 Basics</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
+                <div class="gallery-item blockout" onclick="openEnhancedLightbox(this)">
+                    <img src="images/blockout map 1.png" alt="Arena Level-1 Blockout">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Arena/Level-1</div>
+                        <div class="gallery-item-description">First combat arena blockout designed to test rope mechanics and swarm-style gameplay.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item blockout featured" onclick="openEnhancedLightbox(this)">
+                    <img src="images/tutorial concept.png" alt="Full Tutorial Blockout">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Full Tutorial Blockout</div>
+                        <div class="gallery-item-description">Complete tutorial level blockout focusing on teaching basic controls in an engaging way.</div>
+                    </div>
+                </div>
+
+                <!-- Environment Research -->
+
+                <div class="gallery-item environment" onclick="openEnhancedLightbox(this)">
+                    <img src="images/level0.png" alt="First Look Saloon Level">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">First Look of Saloon Level</div>
+                        <div class="gallery-item-description">Initial environmental dressing of the saloon level with Wild West themed assets.</div>
+                    </div>
+                </div>
+
+                <!-- 3D Assets -->
+                <div class="gallery-item assets" onclick="openEnhancedLightbox(this)">
+                    <img src="images/3-tile-3D.png" alt="3D Blender Models">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">My 3D Blender Models</div>
+                        <div class="gallery-item-description">Custom 3D models created in Blender.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item assets" onclick="openEnhancedLightbox(this)">
+                    <img src="images/dynamite-crate.png" alt="Dynamite Crate Asset">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Dynamite Crate Creation</div>
+                        <div class="gallery-item-description">Custom 3D assets created by using downloaded 3D Models.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item assets" onclick="openEnhancedLightbox(this)">
+                    <img src="images/cactus.png" alt="Edited Cactus Model">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Edited Cactus Models</div>
+                        <div class="gallery-item-description">Custom 3D assets created by editing via Blender downloaded 3D Models..</div>
+                    </div>
+                </div>
+
+                <!-- Game Access Showcase Version -->
+                <div class="gallery-item final featured" onclick="openEnhancedLightbox(this)">
+                    <img src="images/level-1-v1-3.png" alt="Level 1 GA Version">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level 1 - Game Access Version</div>
+                        <div class="gallery-item-description">The first combat arena as presented at the Game Access Indie Showcase in Brno.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item final" onclick="openEnhancedLightbox(this)">
+                    <img src="images/level2_3tile.png" alt="Level 2 GA Version">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level 2 - Game Access Version</div>
+                        <div class="gallery-item-description">Second combat arena as presented at the Game Access Indie Showcase in Brno.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item final" onclick="openEnhancedLightbox(this)">
+                    <img src="images/level0_3T.png" alt="HUB Level Finished">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">HUB Level - Finished Version</div>
+                        <div class="gallery-item-description">The completed central hub area where players gather before entering combat arenas.</div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item final" onclick="openEnhancedLightbox(this)">
+                    <img src="images/level1_v2_3T.png" alt="New Level 1">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level 1 - Updated Version</div>
+                        <div class="gallery-item-description">Revised first arena incorporating player feedback with alternative paths and enemy flank options.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item final" onclick="openEnhancedLightbox(this)">
+                    <img src="images/level2_v2_3T.png" alt="New Level 2">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level 2 - Updated Version</div>
+                        <div class="gallery-item-description">Enhanced second arena with improved collision detection and refined environmental design.</div>
+                    </div>
+                </div>
+
+                <!-- Future Development -->
+                <div class="gallery-item concept" onclick="openEnhancedLightbox(this)">
+                    <img src="images/tutorial.png" alt="New Tutorial Design">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">New Tutorial Design</div>
+                        <div class="gallery-item-description">Redesigned tutorial level concept to accommodate the new lore and story.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item concept" onclick="openEnhancedLightbox(this)">
+                    <img src="images/level3_b.png" alt="Level 4 Concept">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level 4 Concept</div>
+                        <div class="gallery-item-description">Conceptual schema for future level expansion, exploring new environmental themes and gameplay challenges.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item concept" onclick="openEnhancedLightbox(this)">
+                    <img src="images/level3_schema.png" alt="Level 4 Basics">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Level 4 Basic Layout</div>
+                        <div class="gallery-item-description">Fundamental layout design for the fourth arena.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Lightbox -->
+    <div id="enhanced-lightbox" class="enhanced-lightbox" onclick="closeEnhancedLightbox()">
+        <div class="enhanced-lightbox-content" onclick="event.stopPropagation()">
+            <span class="enhanced-lightbox-close" onclick="closeEnhancedLightbox()">&times;</span>
+            <img id="enhanced-lightbox-image" src="" alt="">
+            <div class="enhanced-lightbox-info">
+                <div class="enhanced-lightbox-title" id="enhanced-lightbox-title"></div>
+                <div class="enhanced-lightbox-description" id="enhanced-lightbox-description"></div>
+            </div>
         </div>
     </div>
-</section>
 
-<!-- Step Lightbox for Workflow -->
-<div id="step-lightbox" class="lightbox" onclick="closeStepLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img id="step-lightbox-image" src="" alt="Workflow Image">
-    <div class="lightbox-nav">
-        <button class="lightbox-btn prev" onclick="changeStepLightboxImage(-1)">❮</button>
-        <button class="lightbox-btn next" onclick="changeStepLightboxImage(1)">❯</button>
+    <!-- Step Lightbox for Workflow -->
+    <div id="step-lightbox" class="lightbox" onclick="closeStepLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="step-lightbox-image" src="" alt="Workflow Image">
+        <div class="lightbox-nav">
+            <button class="lightbox-btn prev" onclick="changeStepLightboxImage(-1)">❮</button>
+            <button class="lightbox-btn next" onclick="changeStepLightboxImage(1)">❯</button>
+        </div>
     </div>
-</div>
 
     <!-- Footer -->
     <footer>
@@ -344,6 +554,51 @@ setInterval(() => {
     changeSlide(1);
 }, 5000);
 
+// Gallery Filter functionality
+function filterGallery(category) {
+    const items = document.querySelectorAll('.gallery-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Update active button
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    // Filter items
+    items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+            item.style.animation = 'galleryItemFadeIn 0.6s ease forwards';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Enhanced Lightbox functionality
+function openEnhancedLightbox(element) {
+    const img = element.querySelector('img');
+    const title = element.querySelector('.gallery-item-title').textContent;
+    const description = element.querySelector('.gallery-item-description').textContent;
+    
+    const lightbox = document.getElementById('enhanced-lightbox');
+    const lightboxImage = document.getElementById('enhanced-lightbox-image');
+    const lightboxTitle = document.getElementById('enhanced-lightbox-title');
+    const lightboxDescription = document.getElementById('enhanced-lightbox-description');
+    
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightboxTitle.textContent = title;
+    lightboxDescription.textContent = description;
+    
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeEnhancedLightbox() {
+    document.getElementById('enhanced-lightbox').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
 // Step Lightbox functionality
 let currentStepLightboxIndex = 0;
 let currentStepImages = [];
@@ -383,12 +638,27 @@ function changeStepLightboxImage(direction) {
     lightboxImage.alt = currentStepImages[currentStepLightboxIndex].alt;
 }
 
-// Close step lightbox on Escape key
+// Close lightboxes on Escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeStepLightbox();
+        closeEnhancedLightbox();
     }
 });
+
+// Smooth scroll to gallery when clicking from workflow
+function scrollToGallery() {
+    document.getElementById('project-gallery').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Smooth scroll to overview section
+function scrollToOverview() {
+    document.getElementById('overview').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
     </script>
 
 </body>
