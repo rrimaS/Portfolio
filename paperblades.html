@@ -239,67 +239,71 @@ document.querySelector('.dropdown-toggle').addEventListener('click', function(e)
             </div>
 
             <!-- Gallery Filters -->
-            <!-- <div class="gallery-filters">
+            <div class="gallery-filters">
                 <button class="filter-btn active" onclick="filterGallery('all')">All</button>
                 <button class="filter-btn" onclick="filterGallery('concept')">Concept Art</button>
                 <button class="filter-btn" onclick="filterGallery('level-design')">Level Design</button>
-                <button class="filter-btn" onclick="filterGallery('gameplay')">Gameplay</button>
-            </div> -->
+                <button class="filter-btn" onclick="filterGallery('environments')">Environments</button>
+            </div>
 
             <!-- Gallery Grid -->
             <div class="gallery-grid">
                 <!-- Concept Art Images -->
                 <div class="gallery-item concept featured" onclick="openEnhancedLightbox(this)">
-                    <img src="images/pb/3.png" alt="Paper Blades Concept Art">
+                    <img src="images/pb/3.png" alt="Paper Blades Final Level">
                     <div class="gallery-item-overlay">
                         <div class="gallery-item-title">Final Level Look</div>
+                        <div class="gallery-item-description">The completed level design showcasing the paper-craft aesthetic with strategic positioning elements.</div>
                     </div>
                 </div>
 
                 <div class="gallery-item concept" onclick="openEnhancedLightbox(this)">
-                    <img src="images/pb/2.png" alt="Japanese Environment Concepts">
+                    <img src="images/pb/2.png" alt="Tutorial Level Design">
                     <div class="gallery-item-overlay">
                         <div class="gallery-item-title">Tutorial Level</div>
+                        <div class="gallery-item-description">Introduction level designed to teach players basic mechanics in the paper world setting.</div>
                     </div>
                 </div>
 
                 <!-- Level Design Images -->
                 <div class="gallery-item level-design" onclick="openEnhancedLightbox(this)">
-                    <img src="images/pb/1.png" alt="Tactical Arena Layout">
+                    <img src="images/pb/1.png" alt="First Level Design">
                     <div class="gallery-item-overlay">
                         <div class="gallery-item-title">First Level</div>
-                        <!-- <div class="gallery-item-description">Strategic positioning and movement flow designs for tactical combat scenarios.</div> -->
+                        <div class="gallery-item-description">Initial level design focusing on tactical arena layout for strategic unit positioning.</div>
                     </div>
                 </div>
 
                 <div class="gallery-item level-design featured" onclick="openEnhancedLightbox(this)">
-                    <img src="images/pb/4.png" alt="Level Flow Diagrams">
+                    <img src="images/pb/4.png" alt="Final Level Implementation">
                     <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">Final Level Look</div>
-                        <!-- <div class="gallery-item-description">Detailed analysis of player movement patterns and strategic positioning opportunities.</div> -->
+                        <div class="gallery-item-title">Final Level Implementation</div>
+                        <div class="gallery-item-description">Completed level with full environmental dressing and tactical elements in place.</div>
                     </div>
                 </div>
 
                 <div class="gallery-item level-design" onclick="openEnhancedLightbox(this)">
-                    <img src="images/pb/v1.png" alt="Cover System Design">
+                    <img src="images/pb/v1.png" alt="Level Variant 1">
                     <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">Level Randomize Variant</div>
-                        <!-- <div class="gallery-item-description">Strategic cover placement and elevation design for tactical gameplay depth.</div> -->
+                        <div class="gallery-item-title">Level Randomize Variant 1</div>
+                        <div class="gallery-item-description">First randomized layout variant designed to enhance replayability in the roguelite system.</div>
                     </div>
                 </div>
 
                 <!-- Environment Images -->
                 <div class="gallery-item environments" onclick="openEnhancedLightbox(this)">
-                    <img src="images/pb/v2.png" alt="Cherry Blossom Temple">
+                    <img src="images/pb/v2.png" alt="Level Variant 2">
                     <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">Level Randomize Variant</div>
+                        <div class="gallery-item-title">Level Randomize Variant 2</div>
+                        <div class="gallery-item-description">Second environmental variant showcasing different tactical possibilities within the paper aesthetic.</div>
                     </div>
                 </div>
 
                 <div class="gallery-item environments" onclick="openEnhancedLightbox(this)">
-                    <img src="images/pb/v3.png" alt="Mountain Shrine">
+                    <img src="images/pb/v3.png" alt="Level Variant 3">
                     <div class="gallery-item-overlay">
-                        <div class="gallery-item-title">Level Randomize Variant</div>
+                        <div class="gallery-item-title">Level Randomize Variant 3</div>
+                        <div class="gallery-item-description">Third layout variant demonstrating the flexibility of the modular level design system.</div>
                     </div>
                 </div>
             </div>
@@ -390,7 +394,8 @@ function filterGallery(category) {
 function openEnhancedLightbox(element) {
     const img = element.querySelector('img');
     const title = element.querySelector('.gallery-item-title').textContent;
-    const description = element.querySelector('.gallery-item-description').textContent;
+    const description = element.querySelector('.gallery-item-description') ? 
+                      element.querySelector('.gallery-item-description').textContent : '';
     
     const lightbox = document.getElementById('enhanced-lightbox');
     const lightboxImage = document.getElementById('enhanced-lightbox-image');
@@ -415,6 +420,16 @@ function closeEnhancedLightbox() {
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeEnhancedLightbox();
+    }
+});
+
+// Arrow key navigation for lightboxes (if needed for future expansion)
+document.addEventListener('keydown', function(event) {
+    const enhancedLightbox = document.getElementById('enhanced-lightbox');
+    
+    // Only handle arrow keys if the enhanced lightbox is open
+    if (enhancedLightbox.style.display === 'flex') {
+        // Future: could add navigation between gallery items
     }
 });
 
