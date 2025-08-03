@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samir Abu Safieh - CV</title>
+        <style>
+        .contact-section, .skills-section, .languages-section, .education-section, .certificates-section {
+                    margin-bottom: 20px;
+                }
+        .project-list {
+            list-style: none;
+            margin-top: 4px;
+            padding-left: 0;
+        }
+        
+        .project-list li {
+            font-size: 12px;
+            line-height: 1.3;
+            color: #4a5568;
+            margin-bottom: 2px;
+            padding-left: 12px;
+            position: relative;
+        }
+        
+        .project-list li::before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            height: 297mm;
+        }
+        
+        .sidebar {
+            background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%);
+            color: white;
+            padding: 20px 18px;
+        }
+        
+        .profile-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 15px 0;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        
+        .title {
+            font-size: 13px;
+            color: #a0aec0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+        
+        .sidebar h3 {
+            color: #81c784;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #81c784;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .contact-icon {
+            width: 16px;
+            margin-right: 8px;
+            text-align: center;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 10px;
+            margin-bottom: 6px;
+            border-radius: 15px;
+            font-size: 12px;
+            text-align: center;
+            border-left: 3px solid #81c784;
+        }
+        
+        .languages-list {
+            list-style: none;
+        }
+        
+        .languages-list li {
+            padding: 5px 0;
+            font-size: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .language-level {
+            color: #81c784;
+            float: right;
+        }
+        
+        .main-content {
+            padding: 25px 30px;
+            background: white;
+        }
+        
+        .header {
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            color: #2d3748;
+            margin-bottom: 6px;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #667eea;
+            font-weight: 600;
+        }
+        
+        .profile-text {
+            font-size: 13px;
+            line-height: 1.4;
+            color: #4a5568;
+            text-align: justify;
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .experience-item::before, .education-item::before, .project-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+        
+        .company-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        
+        .job-title {
+            font-size: 13px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .date-range {
+            font-size: 11px;
+            color: #718096;
+            background: #f7fafc;
+            padding: 2px 8px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+        
+        .description {
+            font-size: 12px;
+            line-height: 1.3;
+            color: #4a5568;
+        }
+        
+        .certificates-list {
+            list-style: none;
+        }
+        
+        .certificates-list li {
+            background: #f7fafc;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+            font-size: 11px;
+        }
+        
+        .cert-name {
+            font-weight: bold;
+            color: #2d3748;
+            font-size: 11px;
+        }
+        
+        .cert-details {
+            color: #718096;
+            font-size: 10px;
+        }
+        
+        .rodo-section {
+            margin-top: 20px;
+            padding-top: 0px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .rodo-text {
+            font-size: 10px;
+            line-height: 1.3;
+            color: #718096;
+            text-align: justify;
+            font-style: italic;
+        }
+        
+        .pdf-download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .pdf-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .pdf-download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .pdf-download-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: none;
+            }
+            
+            .pdf-download-btn {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+                margin: 10px;
+                height: auto;
+            }
+            
+            .sidebar {
+                padding: 20px 15px;
+            }
+            
+            .main-content {
+                padding: 20px 15px;
+            }
+            
+            .pdf-download-btn {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 0 auto 15px;
+                display: flex;
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="cv-container" id="cv-content">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="name">Samir<br>Abu Safieh</div>
+                <div class="title">Game Developer & Level Designer</div>
+            </div>
+            
+            <div class="contact-section">
+                <h3>Contact</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>+48 793 790 709</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>sabusafieh@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>Ruda Śląska, Poland</div>
+                </div>
+            </div>
+            
+            <div class="skills-section">
+                <h3>Technical Skills</h3>
+                <ul class="skills-list">
+                    <li>C/C++</li>
+                    <li>Python</li>
+                    <li>Unity 6</li>
+                    <li>Unreal Engine 4/5</li>
+                    <li>Blender</li>
+                    <li>SQL</li>
+                    <li>Source Control (Git/Perforce/SVN)</li>
+                    <li>Network Administration</li>
+                </ul>
+            </div>
+            
+            <div class="languages-section">
+                <h3>Languages</h3>
+                <ul class="languages-list">
+                    <li>Polish <span class="language-level">Native</span></li>
+                    <li>English <span class="language-level">C1</span></li>
+                    <li>Spanish <span class="language-level">A2</span></li>
+                </ul>
+            </div>
+            
+            <div class="education-section">
+                <h3>Education</h3>
+                <ul class="certificates-list">
+                    <li>
+                        <div class="cert-name">Master's - Computer Science</div>
+                        <div class="cert-details">Silesia University • Game Development</div>
+                        <div class="cert-details">2024 - Present</div>
+                    </li>
+                    <li>
+                        <div class="cert-name">Bachelor's - Automation & Robotics</div>
+                        <div class="cert-details">Silesia University • IT</div>
+                        <div class="cert-details">2020 - 2024</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="certificates-section">
+                <h3>Certificates</h3>
+                <ul class="certificates-list">
+                    <li>
+                        <div class="cert-name">Cisco Networking Academy</div>
+                        <div class="cert-details">IT Essentials</div>
+                    </li>
+                    <li>
+                        <div class="cert-name">IT Technician</div>
+                        <div class="cert-details">EE.12, EE.13, EE.14</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1>Passionate Game Developer</h1>
+                <div class="subtitle">Level Design • Programming • QA Testing</div>
+            </div>
+            
+            <div class="section">
+                <h2>Profile</h2>
+                <div class="profile-text">
+                    Master's in Computer Science (Game Development) with 6+ months professional experience. Passionate about interactive entertainment with active participation in game conferences and jams. Experienced in level design, QA testing, and AI research.
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="company-name">Keywords Studios</div>
+                            <div class="job-title">AI Researcher</div>
+                        </div>
+                        <div class="date-range">May 2025 - Present</div>
+                    </div>
+                    <div class="description">
+                        Testing LLM models, <b>quality assurance</b>, training assistance and product development in <b>dynamic team environment</b>.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="company-name">PlaceHolders Studio</div>
+                            <div class="job-title">Level Designer / Environment Artist</div>
+                        </div>
+                        <div class="date-range">Jun 2024 - Present</div>
+                    </div>
+                    <div class="description">
+                        Indie studio <b>level designer</b> <b>creating levels from scratch, materials/shaders, 3D models in Blender, gameplay mechanics and scripts</b>. Projects showcased at international conferences. <b>Unity 6 development</b>.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="company-name">Carbon Studio S.A</div>
+                            <div class="job-title">QA Tester / Level Designer</div>
+                        </div>
+                        <div class="date-range">Jun 2024 - Nov 2024</div>
+                    </div>
+                    <div class="description">
+                        <b>QA testing and level design</b> for major projects. <b>Performance optimization:</b> LODs editing, triangle reduction, draw distances, mesh merging. <b>PS5 certification compliance.</b> <b>Version control:</b> TortoiseSVN, Perforce, Git.
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="company-name">KSK Development</div>
+                            <div class="job-title">Developer</div>
+                        </div>
+                        <div class="date-range">Jul 2023 - Nov 2023</div>
+                    </div>
+                    <div class="description">
+                       <b>C++ programming</b>, assembly, and <b>testing</b> of IoT sensors for smart cities (humidity, parking, pedestrian sensors).
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Key Projects</h2>
+                
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="company-name">Paper Blades</div>
+                            <div class="job-title">Level Designer, Developer</div>
+                        </div>
+                    </div>
+                    <ul class="project-list">
+                        <li><b>Roguelike/RTS</b> game for ZTGK competition (2nd place, sponsor awards)</li>
+                        <li><b>Feudal Japan setting </b> with <b>Origami art</b> style in Unity 3D</li>
+                        <li><b>Designed and compose</b> the levels for the game</li>
+                        <li><b>Scripted a semi-random levels</b></li>
+                    </ul>
+                </div>
+                
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="company-name">KNOT FUN</div>
+                            <div class="job-title">Level Designer / Enviroment Artist</div>
+                        </div>
+                    </div>
+                    <ul class="project-list">
+                        <li>Wild West <b>swarm-style roguelike</b> with <b>4-player co-op</b></li>
+                        <li><b>Designed arena-levels</b>, <b>directed tutorial</b>, <b>created & modified 3D models</b></li>
+                        <li><b>Featured at Game Access Indie Showcase</b>, planing release on Steam</li>
+                    </ul>
+                </div>
+                
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="company-name">LATROP</div>
+                            <div class="job-title">Developer</div>
+                        </div>
+                    </div>
+                    <ul class="project-list">
+                        <li><b>3D portal-based puzzle game in OpenGL</b></li>
+                        <li>Advanced rendering and real-time graphics</li>
+                        <li><b>University project</b> demonstrating technical proficiency</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="rodo-section">
+                <div class="rodo-text">
+                    <!-- Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w mojej ofercie pracy dla potrzeb niezbędnych
+                    do realizacji procesu rekrutacji ( zgodnie z Ustawą z dn. 29.08.97 o Ochronie danych Osobowych Dz.U. nr 133 poz. 883 z
+                    późn. zm.) -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        // Text Bold Toggle Function
+        function initializeBoldToggle() {
+            // Get all text elements that can be made bold
+            const selectableElements = document.querySelectorAll('.description, .profile-text, .project-list li, .company-name, .job-title, .cert-name, .cert-details');
+            
+            selectableElements.forEach(element => {
+                // Add cursor pointer to show it's clickable
+                element.style.cursor = 'pointer';
+                element.style.userSelect = 'text';
+                
+                // Add click event listener
+                element.addEventListener('click', function(e) {
+                    // Prevent event bubbling
+                    e.stopPropagation();
+                    
+                    // Toggle bold style
+                    if (this.style.fontWeight === 'bold') {
+                        this.style.fontWeight = 'normal';
+                        this.style.background = '';
+                    } else {
+                        this.style.fontWeight = 'bold';
+                        // Add a subtle highlight for feedback
+                        this.style.background = 'rgba(102, 126, 234, 0.1)';
+                        
+                        // Remove highlight after a short time
+                        setTimeout(() => {
+                            this.style.background = '';
+                        }, 300);
+                    }
+                });
+                
+                // Add hover effect
+                element.addEventListener('mouseenter', function() {
+                    if (this.style.fontWeight !== 'bold') {
+                        this.style.background = 'rgba(102, 126, 234, 0.05)';
+                    }
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    if (this.style.fontWeight !== 'bold') {
+                        this.style.background = '';
+                    }
+                });
+            });
+            
+            // Add instructions
+            const instructionDiv = document.createElement('div');
+            instructionDiv.innerHTML = `
+                <div style="
+                    position: fixed; 
+                    bottom: 20px; 
+                    left: 20px; 
+                    background: rgba(0,0,0,0.8); 
+                    color: white; 
+                    padding: 8px 12px; 
+                    border-radius: 5px; 
+                    font-size: 11px; 
+                    z-index: 1000;
+                    opacity: 0.7;
+                ">
+                    💡 Click on any text to make it bold/unbold
+                </div>
+            `;
+            document.body.appendChild(instructionDiv);
+            
+            // Hide instructions after 5 seconds
+            setTimeout(() => {
+                instructionDiv.style.opacity = '0';
+                setTimeout(() => {
+                    instructionDiv.remove();
+                }, 500);
+            }, 5000);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeBoldToggle();
+        });
+    </script>
+    </script>
+</body>
+</html>
